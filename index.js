@@ -4,8 +4,8 @@ const rl = readline.createInterface({
     output: process.stdout
   });
 rl.on('line', (input) => {
-    console.log('input received: hello');
     if (input.indexOf('joined the game') > -1) {
+        console.log("input received: " + input);
         let playerName = require('./src/message-parser.js').parsePlayerJoined(input).player;
         require('./src/discord-client.js').notifyPlayerHasJoined(playerName);
     }
