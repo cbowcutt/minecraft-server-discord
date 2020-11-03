@@ -28,7 +28,12 @@ module.exports = {
         }
     },
     notifyPlayerHasJoined(player) {
-        Axios.request({url: config.webhook_url, data: { content: `${player} has started crafting :pick:`}, method: 'post'}).then(r => response = r)
+        Axios.request({url: config.webhook_url, data: { content: `:pick: :pick: :pick: \n${player} has started crafting`}, method: 'post'}).then(r => response = r)
+
+    },
+
+    notifyPlayerHasLeft(player) {
+        Axios.request({url: config.webhook_url, data: { content: `:wave: :wave: :wave: \n ${player} has stopped crafting` }, method: 'post'}).then(r => response = r)
 
     }
 }

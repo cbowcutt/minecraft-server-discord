@@ -10,5 +10,11 @@ module.exports = {
         let regexp = /(?<username>\w+) joined the game/mg
         let groups = regexp.exec(message)
         return { player: groups[1]};
+    },
+
+    parsePlayerLeft(message) {
+        let regexp = /(?<username>\w+) left the game/mg
+        let groups = regexp.exec(message)
+        return { player: groups[1]};
     }
 }

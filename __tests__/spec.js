@@ -14,6 +14,13 @@ test('parsePlayerJoined', () => {
     expect(output.player).toBe('mattjgray');
 })
 
+test('parsePlayerLeft', () => {
+    let input = '[00:37:46] [Server thread/INFO]: mattjgray left the game'
+    let output = require('../src/message-parser.js').parsePlayerLeft(input)
+    expect(output.player).toBe('mattjgray');
+})
+
+
 test('sendDiscordMessage', () => {
     let config = require('../discord.config.json');
     require('../src/discord-client').channel(config.channel_id).message("sup");
