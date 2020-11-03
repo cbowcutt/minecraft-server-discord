@@ -8,6 +8,13 @@ test('onPlayerJoinedTheGame', () => {
     expect(output.spawnCoordinates.z).toBe(-22.5);
 })
 
+test('parsePlayerJoined', () => {
+    let input = '[00:37:46] [Server thread/INFO]: mattjgray joined the game'
+    let output = require('../src/message-parser.js').parsePlayerJoined(input)
+    expect(output.player).toBe('mattjgray');
+})
+
 test('sendDiscordMessage', () => {
-    require('../src/discord-client')
+    let config = require('../discord.config.json');
+    require('../src/discord-client').channel(config.channel_id).message("sup");
 })

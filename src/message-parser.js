@@ -4,6 +4,11 @@ module.exports = {
         let groups = regexp.exec(message);
 
         return { player: groups[1], id: groups[2],  spawnCoordinates: {x: Number.parseFloat(groups[3]), y: Number.parseFloat(groups[4]), z: Number.parseFloat(groups[5])} }
+    },
 
+    parsePlayerJoined(message) {
+        let regexp = /(?<username>\w+) joined the game/mg
+        let groups = regexp.exec(message)
+        return { player: groups[1]};
     }
 }
