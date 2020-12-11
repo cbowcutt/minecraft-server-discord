@@ -1,2 +1,4 @@
 node_modules
 discord.config.json
+.env
+nohup.out

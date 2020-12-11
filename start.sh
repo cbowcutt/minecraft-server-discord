@@ -1,0 +1,1 @@
+tail -f ../server.log | MINECRAFT_DISCORD_WEBHOOK_URL=$MINECRAFT_DISCORD_WEBHOOK_URL node index.js
