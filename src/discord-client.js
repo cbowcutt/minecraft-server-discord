@@ -22,7 +22,7 @@ module.exports = {
     },
 
     notifyPlayerHasLeft(player) {
-        Axios.request({url: config.MINECRAFT_DISCORD_WEBHOOK_URL, data: { content: `:wave: :wave: :wave: \n ${player} has stopped crafting` }, method: 'post'}).then(r => response = r)
+        Axios.request({url: process.env.MINECRAFT_DISCORD_WEBHOOK_URL, data: { content: `:wave: :wave: :wave: \n ${player} has stopped crafting` }, method: 'post'}).then(r => response = r)
 
     }
 }
